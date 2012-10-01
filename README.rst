@@ -1,7 +1,7 @@
 Installation
 ==============
 
-1. `pip install -e git+git://github.com/hzdg/django-admintools.git#egg=django-admintools`
+1. `pip install -e git+git@github.com:hzdg/django-admintools.git#egg=django-admintools`
 
 
 Included Tools
