@@ -7,14 +7,14 @@ Installation
 Included Tools
 ==============
 
-export_as_csv_action
---------------------
+ExportAsCsv
+-----------
 
 In admin.py::
 
-    from admintools import export_as_csv_action
+    from admintools.actions import ExportAsCsv
 
     class MyAdmin(models.ModelAdmin):
-        actions = [export_as_csv_action("Export selected emails as CSV file",
-        exclude=['id'])]
+        actions = [ExportAsCsv("Export selected emails as CSV file",
+                               exclude=['id'])]
 
