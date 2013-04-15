@@ -14,7 +14,7 @@ In admin.py::
 
     from admintools.actions import ExportAsCsv
 
-    class MyAdmin(models.ModelAdmin):
+    class MyAdmin(admin.ModelAdmin):
         actions = [ExportAsCsv("Export selected emails as CSV file",
                                exclude=['id'])]
 
