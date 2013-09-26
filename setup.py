@@ -14,6 +14,7 @@ setup(
     description='A collection of utilities that make dealing with the Django admin a hoot.',
     url='https://github.com/hzdg/django-admintools',
     long_description=README,
+    author='chrismc@hzdg.com',
     packages=[
         'admintools',
     ],
