@@ -26,7 +26,7 @@ class ExportAsCsv(object):
 
         if len(self.fields) > 0:
             field_names = [field.name for field in opts.fields \
-                    if field.name not in exclude and field.name in self.fields]
+                    if field.name not in self.exclude and field.name in self.fields]
         else:
             field_names = [field.name for field in opts.fields \
                     if field.name not in self.exclude]
