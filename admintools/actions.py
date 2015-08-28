@@ -31,7 +31,7 @@ class ExportAsCsv(object):
             field_names = [field.name for field in opts.fields \
                     if field.name not in self.exclude]
 
-        response = HttpResponse(mimetype='text/csv')
+        response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename=%s.csv' % \
                                             unicode(opts).replace('.', '_')
 
