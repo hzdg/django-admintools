@@ -10,7 +10,7 @@ README=read('README.rst')
 
 setup(
     name='django-admintools',
-    version='0.1',
+    version='0.2',
     description='A collection of utilities that make dealing with the Django admin a hoot.',
     url='https://github.com/hzdg/django-admintools',
     long_description=README,
