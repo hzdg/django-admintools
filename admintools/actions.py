@@ -39,10 +39,17 @@ class ExportAsCsv(object):
         if self.header:
             writer.writerow(list(field_names))
         for obj in queryset:
-            writer.writerow([smart_str(
-                                getattr(obj, field)) for field in field_names])
+            writer.writerow([self._get_value(obj, field)
+                            for field in opts.fields if field.name in field_names])
         return response
 
+    def _get_value(self, obj, field):
+        if field.choices:
+            f = getattr(obj, 'get_{0}_display'.format(field.name))
+            value = f()
+        else:
+            value = smart_str(getattr(obj, field.name))
+        return value
 
 # For backwards compatibility
 def export_as_csv_action(description="Export selected objects as CSV file",
