@@ -3,14 +3,15 @@
 import os
 from distutils.core import setup
 
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-README=read('README.rst')
+README = read('README.rst')
 
 setup(
     name='django-admintools',
-    version='0.2',
+    version='0.3.0',
     description='A collection of utilities that make dealing with the Django admin a hoot.',
     url='https://github.com/hzdg/django-admintools',
     long_description=README,
