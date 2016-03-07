@@ -25,15 +25,15 @@ class ExportAsCsv(object):
         opts = modeladmin.model._meta
 
         if len(self.fields) > 0:
-            field_names = [field.name for field in opts.fields \
-                    if field.name not in self.exclude and field.name in self.fields]
+            field_names = [field.name for field in opts.fields
+                           if field.name not in self.exclude and field.name in self.fields]
         else:
-            field_names = [field.name for field in opts.fields \
-                    if field.name not in self.exclude]
+            field_names = [field.name for field in opts.fields
+                           if field.name not in self.exclude]
 
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename=%s.csv' % \
-                                            unicode(opts).replace('.', '_')
+                                          unicode(opts).replace('.', '_')
 
         writer = csv.writer(response)
         if self.header:
@@ -50,6 +50,7 @@ class ExportAsCsv(object):
         else:
             value = smart_str(getattr(obj, field.name))
         return value
+
 
 # For backwards compatibility
 def export_as_csv_action(description="Export selected objects as CSV file",
